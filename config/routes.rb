@@ -14,4 +14,7 @@ match '/television_shows/:television_show_id/characters',
 match '/television_shows/:television_show_id/characters/:id',
 :to => 'characters#show', :as => :character, via: :get
 
+match '/television_shows/:television_show_id/characters/:id',
+:to => 'characters#destroy', :as => :delete_character, via: :delete
+
 end

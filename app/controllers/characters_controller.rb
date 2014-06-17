@@ -29,7 +29,14 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.destroy
 
-    redirect_to characters_path
+    if @character.destroy
+      flash[:notice] = "Deleted #{@character.name}."
+      redirect_to characters_path
+    else
+      flash.now[:notice] = "Your character couldn't be deleted."
+      render :show
+    end
+
   end
 
   private

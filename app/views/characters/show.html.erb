@@ -1,13 +1,9 @@
-<h3><%= @character.title %></h3>
+<h3><%= @character.name %></h3>
 
 <ul>
-  <li>Network: <%= @character.network %></li>
-  <li>Years: <%= @character.years %></li>
+  <li>Actor: <%= @character.actor %></li>
+  <li>Description: <%= @character.description %></li>
 </ul>
 
-<div>
-  <%= @character.synopsis %>
-</div>
-
-<%= link_to 'Delete', character_path(@character.id),
-    method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete Character', delete_character_path(@character.television_show_id, @character.id),
+    method: :delete %>
