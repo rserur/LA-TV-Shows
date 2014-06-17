@@ -8,3 +8,11 @@
 <div>
   <%= @television_show.synopsis %>
 </div>
+
+<ul>
+<% @television_show.characters.each do | character| %>
+  <li>Name: <%= character.name %> | Actor: <%= character.actor %> |
+   Description <%= character.description %></li>
+
+<% end %>
+</ul>
