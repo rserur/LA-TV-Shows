@@ -8,3 +8,6 @@
 <div>
   <%= @character.synopsis %>
 </div>
+
+<%= link_to 'Delete', character_path(@character.id),
+    method: :delete, data: { confirm: 'Are you sure?' } %>
